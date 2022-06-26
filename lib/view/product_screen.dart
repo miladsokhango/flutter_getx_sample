@@ -1,27 +1,18 @@
-
-
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_sample/controller/product_controller.dart';
 import 'package:flutter_getx_sample/model/product_model.dart';
-import 'package:flutter_getx_sample/view/product_screen.dart';
 import 'package:get/get.dart';
 
-import '../model/product_model.dart';
-
-// ignore: use_key_in_widget_constructors, must_be_immutable
-class MainScreen extends StatelessWidget{
-
-  // var counteer = 0.obs;
-
+class ProductScreen extends StatelessWidget{
   ProductController productController = Get.put(
-    ProductController(productModel: ProductModel(name: "بستنی کیم",off: "50",price: "15000").obs));
-
+    ProductController(productModel: ProductModel(name: "نوشابا",off: "50",price: "500").obs));
 
   @override
   Widget build(BuildContext context) {
     
     return Scaffold(
+      backgroundColor: Colors.amber,
       body:  Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -41,7 +32,7 @@ class MainScreen extends StatelessWidget{
             ElevatedButton(
               onPressed: ((){
                 productController.productModel.update((val) {
-                  val!.name ="chitooz namaki";
+                  val!.name ="لواشک";
                   val!.price ="10000";
                   val!.off ="50%";
                 });
@@ -49,19 +40,21 @@ class MainScreen extends StatelessWidget{
 
             ,
             child: const Text("Press")),
+
+            
             
             
             ElevatedButton(
               onPressed: ((){
-                Get.to(ProductScreen());
+                Get.back();
               })
 
             ,
-            child: const Text("GO"))
+            child: const Text("back"))
           ],
         ),
       ),
     );
   }
-
+  
 }
