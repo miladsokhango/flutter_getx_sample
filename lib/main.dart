@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_getx_sample/view/main_screen.dart';
+import 'package:flutter_getx_sample/view/product_screen_getx_widget.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: MainScreen(),
+      home: ProductScreenGetx(),
     );
   }
 }

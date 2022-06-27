@@ -5,8 +5,7 @@ import 'package:flutter_getx_sample/model/product_model.dart';
 import 'package:get/get.dart';
 
 class ProductScreen extends StatelessWidget{
-  ProductController productController = Get.put(
-    ProductController(productModel: ProductModel(name: "نوشابا",off: "50",price: "500").obs));
+  ProductController productController = Get.put(ProductController());
 
   @override
   Widget build(BuildContext context) {
@@ -31,11 +30,7 @@ class ProductScreen extends StatelessWidget{
                
             ElevatedButton(
               onPressed: ((){
-                productController.productModel.update((val) {
-                  val!.name ="لواشک";
-                  val!.price ="10000";
-                  val!.off ="50%";
-                });
+                
               })
 
             ,
